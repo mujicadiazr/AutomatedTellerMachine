@@ -94,3 +94,6 @@ C:\Users\BlancaH\Documents\Visual Studio 2015\Projects\AutomatedTellerMachine\Au
 C:\Users\BlancaH\Documents\Visual Studio 2015\Projects\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.csprojResolveAssemblyReference.cache
 C:\Users\BlancaH\Documents\Visual Studio 2015\Projects\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.dll
 C:\Users\BlancaH\Documents\Visual Studio 2015\Projects\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.pdb
+C:\Users\BlancaH\Documents\Visual Studio 2015\Projects\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.Migrations.InitialCreate.resources
+C:\Users\BlancaH\Documents\Visual Studio 2015\Projects\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.csproj.GenerateResource.Cache
+C:\Users\BlancaH\Documents\Visual Studio 2015\Projects\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.Migrations.AccountNumberChanges.resources
