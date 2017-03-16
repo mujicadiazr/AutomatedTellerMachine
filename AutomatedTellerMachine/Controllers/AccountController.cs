@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AutomatedTellerMachine.Models;
+using AutomatedTellerMachine.Sevices;
 
 namespace AutomatedTellerMachine.Controllers
 {
@@ -158,18 +159,21 @@ namespace AutomatedTellerMachine.Controllers
                     UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, model.FirstName));
 
                     var db = new ApplicationDbContext();
-                    var accountNumber = (123456 + db.CheckingAccounts.Count()).ToString().PadLeft(10, '0');
-                    var checkingAccount = new CheckingAccount
-                    {
-                        FirstName = model.FirstName,
-                        LastName = model.LastName,
-                        AccountNumber = accountNumber,
-                        Balance = 0,
-                        ApplicationUserId = user.Id
-                    };
+                    CheckingAccountService service = new CheckingAccountService(db);
+                    service.CreateCheckingAccount(model.FirstName, model.LastName, user.Id,0);
 
-                    db.CheckingAccounts.Add(checkingAccount);
-                    db.SaveChanges();
+                    //var accountNumber = (123456 + db.CheckingAccounts.Count()).ToString().PadLeft(10, '0');
+                    //var checkingAccount = new CheckingAccount
+                    //{
+                    //    FirstName = model.FirstName,
+                    //    LastName = model.LastName,
+                    //    AccountNumber = accountNumber,
+                    //    Balance = 0,
+                    //    ApplicationUserId = user.Id
+                    //};
+
+                    //db.CheckingAccounts.Add(checkingAccount);
+                    //db.SaveChanges();
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     

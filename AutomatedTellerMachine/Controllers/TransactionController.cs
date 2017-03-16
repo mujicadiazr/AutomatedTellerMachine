@@ -5,6 +5,7 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using AutomatedTellerMachine.Models;
+using AutomatedTellerMachine.Sevices;
 using Microsoft.AspNet.Identity;
 using Transaction = AutomatedTellerMachine.Models.Transaction;
 
@@ -19,6 +20,7 @@ namespace AutomatedTellerMachine.Controllers
         // GET: Transaction/Deposit
         public ActionResult Deposit(int checkingAccountId)
         {
+            ViewBag.CheckingAccountId = checkingAccountId;
             return View();
         }
 
@@ -31,6 +33,8 @@ namespace AutomatedTellerMachine.Controllers
             {
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
+                CheckingAccountService service = new CheckingAccountService(db);
+                //service.UpdateBalace(ViewBag.CheckingAccountId);
                 return RedirectToAction("Index", "Home");
             }
             return View();
