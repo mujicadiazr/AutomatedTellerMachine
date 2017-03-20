@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Transfer";
+}
+
+<h2>Transfer</h2>
+
+@Html.Partial("_TransferForm")
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).on('submit',
+            '#transferForm',
+            function() {
+                var $theForm = $(this);
+                if ($theForm.valid()) {
+                    $('#progress').show();
+                    $.post('', $theForm.serialize()).done(function(response) {
+                        $theForm.replaceWith(response);
+                    });
+                }
+                return false;
+            });
+    </script>
+}
+

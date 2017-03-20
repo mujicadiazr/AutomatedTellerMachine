@@ -1,13 +1,18 @@
-﻿@{
+﻿@using System.Data.Entity.Core.Metadata.Edm
+@{
     ViewBag.Title = "Home Page";
 }
 
+<div id="cash-message-div" class="alert alert-success" >
+    <span id="cash-message"></span>
+</div>
+
 <div class="row">
     <div class="col-md-6 margin-top-20">
-        <a href="#" class="btn btn-primary btn-lg btn-block">
+        <a href="@Url.Action("Withdrawal","Transaction", new {checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-lg btn-block">
             <span class="glyphicon glyphicon-circle-arrow-down"></span> Withdrawal
         </a>
-        <a href="#" class="btn btn-primary btn-lg btn-block">
+        <a href="@Url.Action("QuickCash","Transaction", new { checkingAccountId = ViewBag.CheckingAccountId, amount = 100 })" class="btn btn-primary btn-lg btn-block">
             <span class="glyphicon glyphicon-flash"></span> Qick Cash $100
         </a>
         <a href="@Url.Action("Details", "CheckingAccount")" class="btn btn-primary btn-lg btn-block">
@@ -19,7 +24,7 @@
         <a href="@Url.Action("Statement", "CheckingAccount", new {id = ViewBag.CheckingAccountId})" class="btn btn-primary btn-lg btn-block">
             <span class="glyphicon glyphicon-print"></span> Print Statement
         </a>
-        <a href="#" class="btn btn-primary btn-lg btn-block">
+        <a href="@Url.Action("Transfer","Transaction", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block">
             <span class="glyphicon glyphicon-transfer"></span> Transfer Funds
         </a>
         <a href="@Url.Action("Deposit", "Transaction", new {checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-lg btn-block">
@@ -28,6 +33,15 @@
     </div>
   
 </div>
+
+@*@section scripts {
+    <script>
+        $('#quick-cash').click(function() {
+            preventDefault();
+            $.get('',)
+        });
+    </script>
+}*@
 
 @ViewBag.Pin
 

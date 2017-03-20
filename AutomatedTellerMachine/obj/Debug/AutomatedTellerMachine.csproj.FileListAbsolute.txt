@@ -191,8 +191,5 @@ C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\bin\Microsoft.Owin
 C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\bin\Microsoft.Owin.Security.Twitter.xml
 C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.csprojResolveAssemblyReference.cache
-C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.Migrations.InitialCreate.resources
-C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.Migrations.AccountNumberChanges.resources
-C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.csproj.GenerateResource.Cache
 C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.dll
 C:\BOX\PROJECTS\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.pdb
