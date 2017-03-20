@@ -162,20 +162,7 @@ namespace AutomatedTellerMachine.Controllers
                     CheckingAccountService service = new CheckingAccountService(db);
                     service.CreateCheckingAccount(model.FirstName, model.LastName, user.Id,0);
 
-                    //var accountNumber = (123456 + db.CheckingAccounts.Count()).ToString().PadLeft(10, '0');
-                    //var checkingAccount = new CheckingAccount
-                    //{
-                    //    FirstName = model.FirstName,
-                    //    LastName = model.LastName,
-                    //    AccountNumber = accountNumber,
-                    //    Balance = 0,
-                    //    ApplicationUserId = user.Id
-                    //};
-
-                    //db.CheckingAccounts.Add(checkingAccount);
-                    //db.SaveChanges();
-
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                   await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link

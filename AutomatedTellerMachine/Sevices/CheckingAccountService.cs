@@ -8,9 +8,9 @@ namespace AutomatedTellerMachine.Sevices
 {
     public class CheckingAccountService
     {
-        private ApplicationDbContext db;
+        private IApplicationDbContext db;
 
-        public CheckingAccountService(ApplicationDbContext dbContext)
+        public CheckingAccountService(IApplicationDbContext dbContext)
         {
             this.db = dbContext;
         }

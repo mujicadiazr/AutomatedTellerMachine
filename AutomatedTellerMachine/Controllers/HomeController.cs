@@ -46,7 +46,7 @@ namespace AutomatedTellerMachine.Controllers
             // TODO : send message to HQ
             ViewBag.TheMessage = "Thanks, we got your message.";
 
-            return View();
+            return PartialView("_ContactThanks");
         }
 
         public ActionResult Foo()

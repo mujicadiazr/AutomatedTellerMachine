@@ -15,7 +15,17 @@ namespace AutomatedTellerMachine.Controllers
     public class TransactionController : Controller
     {
         
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private IApplicationDbContext db;
+
+        public TransactionController()
+        {
+            db = new ApplicationDbContext();
+        }
+
+        public TransactionController(IApplicationDbContext db)
+        {
+            this.db = db;
+        }
 
         // GET: Transaction/Deposit
         public ActionResult Deposit(int checkingAccountId)
@@ -34,7 +44,7 @@ namespace AutomatedTellerMachine.Controllers
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
                 CheckingAccountService service = new CheckingAccountService(db);
-                //service.UpdateBalace(ViewBag.CheckingAccountId);
+                service.UpdateBalace(transaction.CheckingAccountId);
                 return RedirectToAction("Index", "Home");
             }
             return View();

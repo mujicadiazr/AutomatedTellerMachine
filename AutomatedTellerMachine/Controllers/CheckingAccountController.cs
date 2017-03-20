@@ -30,7 +30,8 @@ namespace AutomatedTellerMachine.Controllers
             return View("Details", checkingAccount);
         }
 
-        // GET: CheckingAccount/List 
+        // GET: CheckingAccount/List
+        [Authorize(Roles = "Admin")]
         public ActionResult List()
         {
             return View(db.CheckingAccounts.ToList());
@@ -41,7 +42,13 @@ namespace AutomatedTellerMachine.Controllers
         {
             return View();
         }
-        
+
+        //GET: CheckingAccount/Statement/5
+        public ActionResult Statement(int id)
+        {
+            var checkingAccount = db.CheckingAccounts.Find(id);
+            return View(checkingAccount.Transactions.ToList());
+        }
     }
 }
 
